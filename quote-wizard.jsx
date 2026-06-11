@@ -88,13 +88,6 @@ const DESC_LIMIT = 1000;
 function QuoteWizard({ onClose, embedded = false }) {
   const I = window.Icon;
   const [step, setStep] = React.useState(0);
-  React.useEffect(() => {
-    const s = document.createElement('style');
-    s.id = 'qw-mobile';
-    s.textContent = '@media (max-width: 600px) { .qw-step-label { display: none !important; } .qw-service-grid { grid-template-columns: 1fr !important; } .qw-obj-grid, .qw-urg-grid { grid-template-columns: 1fr !important; } }';
-    if (!document.getElementById('qw-mobile')) document.head.appendChild(s);
-    return () => { const el = document.getElementById('qw-mobile'); if (el) el.remove(); };
-  }, []);
   const [done, setDone] = React.useState(false);
   const [fileError, setFileError] = React.useState('');
   const fileInputRef = React.useRef();
