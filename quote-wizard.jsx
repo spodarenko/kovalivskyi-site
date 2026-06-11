@@ -311,14 +311,15 @@ function QuoteWizard({ onClose, embedded = false }) {
       </div>
 
       {/* footer */}
-      <div style={{ padding: '20px 36px', borderTop: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, background: 'var(--paper-0)' }}>
+      <div className="qw-footer" style={{ padding: '20px 36px', borderTop: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, background: 'var(--paper-0)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--text-muted)', fontSize: 'var(--text-sm)' }}>
           <I.shield size={18} /> Unverbindlich
         </div>
-        <div style={{ display: 'flex', gap: 12 }}>
+        <div className="qw-footer-btns" style={{ display: 'flex', gap: 12 }}>
           {step > 0 && <Button variant="secondary" onClick={back} leadingIcon={<I.arrowLeft size={18} />} aria-label="Zurück" />}
           <Button variant="primary" onClick={next} disabled={!canNext}
-            trailingIcon={step < 3 ? <I.arrowRight size={18} /> : null}>
+            trailingIcon={step < 3 ? <I.arrowRight size={18} /> : null}
+            fullWidth>
             {step < 3 ? 'Weiter' : 'Anfrage senden'}
           </Button>
         </div>
