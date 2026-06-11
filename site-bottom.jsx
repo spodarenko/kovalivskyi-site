@@ -41,8 +41,8 @@ function Projects() {
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', gap: 16 }} className="proj-grid">
         {visible.map((src, i) => (
-          <div key={i} onClick={() => setLb(i)} style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', aspectRatio: '4/3', background: 'var(--paper-100)', boxShadow: 'var(--shadow-card)', cursor: 'pointer' }}>
-            <img src={src} alt={`Projekt ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />
+          <div key={i} onClick={() => setLb(i)} className="proj-item" style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', aspectRatio: '4/3', background: 'var(--paper-100)', boxShadow: 'var(--shadow-card)', cursor: 'pointer' }}>
+            <img src={src} alt={`Projekt ${i + 1}`} className="proj-item-img" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />
           </div>
         ))}
       </div>

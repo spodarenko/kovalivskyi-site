@@ -11,6 +11,10 @@
 <style>
   body { margin: 0; background: var(--bg); }
   a { text-decoration: none; }
+  .proj-item { transition: transform .2s ease, box-shadow .2s ease; }
+  .proj-item:hover { transform: scale(1.03); box-shadow: 0 8px 28px rgba(0,0,0,0.18); }
+  .proj-item:hover .proj-item-img { filter: brightness(0.82); transition: filter .2s ease; }
+  .proj-item-img { transition: filter .2s ease; }
   .nav-links a:hover { color: var(--primary); }
   /* modal */
   .overlay { position: fixed; inset: 0; z-index: 100; background: rgba(14,11,8,0.55); backdrop-filter: blur(4px);
