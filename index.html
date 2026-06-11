@@ -51,8 +51,11 @@
   @media (max-width: 560px) {
     .serv-illus, .serv-grid, .rev-grid, .trust-grid, .proc-grid { grid-template-columns: minmax(0,1fr) !important; }
     .hero-cta { flex-direction: column; align-items: stretch; }
-    .hero-cta > button { width: 100%; }
-    .proj-grid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+    .hero-cta > a, .hero-cta > button { width: 100%; display: block; }
+    .proj-grid { grid-template-columns: minmax(0,1fr) !important; }
+    .hero-badge { left: 0 !important; }
+    .overlay { padding: 0 !important; }
+    .modal { border-radius: 0 !important; max-height: 100vh; }
   }
 </style>
 </head>

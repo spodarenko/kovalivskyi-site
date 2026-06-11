@@ -91,7 +91,7 @@ function QuoteWizard({ onClose, embedded = false }) {
   React.useEffect(() => {
     const s = document.createElement('style');
     s.id = 'qw-mobile';
-    s.textContent = '@media (max-width: 600px) { .qw-step-label { display: none !important; } .qw-service-grid { grid-template-columns: 1fr !important; } }';
+    s.textContent = '@media (max-width: 600px) { .qw-step-label { display: none !important; } .qw-service-grid { grid-template-columns: 1fr !important; } .qw-obj-grid, .qw-urg-grid { grid-template-columns: 1fr !important; } }';
     if (!document.getElementById('qw-mobile')) document.head.appendChild(s);
     return () => { const el = document.getElementById('qw-mobile'); if (el) el.remove(); };
   }, []);
@@ -199,7 +199,7 @@ function QuoteWizard({ onClose, embedded = false }) {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 26 }}>
             <div>
               <h3 style={{ margin: '0 0 12px' }}>Art des Objekts</h3>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
+              <div className="qw-obj-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
                 {OBJECTS.map(o => (
                   <Toggle key={o.id} selected={data.object === o.id} onClick={() => set({ object: o.id })} style={{ justifyContent: 'center' }}>
                     <span style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'var(--text-sm)', color: 'var(--text-strong)', textAlign: 'center', lineHeight: 1.25 }}>{o.label}</span>
@@ -209,7 +209,7 @@ function QuoteWizard({ onClose, embedded = false }) {
             </div>
             <div>
               <h3 style={{ margin: '0 0 12px' }}>Dringlichkeit</h3>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
+              <div className="qw-urg-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
                 {URGENCY.map(u => (
                   <Toggle key={u.id} selected={data.urgency === u.id} onClick={() => set({ urgency: u.id })} style={{ flexDirection: 'column', alignItems: 'center', gap: 4, textAlign: 'center' }}>
                     <span style={{ display: 'flex', alignItems: 'center', gap: 6, fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'var(--text-sm)', color: 'var(--text-strong)' }}>
