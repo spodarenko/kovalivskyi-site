@@ -5,7 +5,7 @@ const UI2 = window.Icon;
 
 /* ---------- Projects (grid) ---------- */
 function Projects() {
-  const BASE = '../../../../artifacts/Gallery/optimized/';
+  const BASE = './assets/gallery/';
   const NUMS = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100];
   const all = NUMS.map(n => `${BASE}gallery-${n}.jpg`);
   const [expanded, setExpanded] = React.useState(false);
@@ -19,7 +19,7 @@ function Projects() {
         </div>
         <Bd2 variant="neutral" size="md">120+ abgeschlossene Aufgaben</Bd2>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0,1fr))', gap: 16 }} className="proj-grid">
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0,1fr))', gap: 16 }} className="proj-grid">
         {visible.map((src, i) => (
           <div key={i} style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', aspectRatio: '4/3', background: 'var(--paper-100)', boxShadow: 'var(--shadow-card)' }}>
             <img src={src} alt={`Projekt ${NUMS[i]}`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />
