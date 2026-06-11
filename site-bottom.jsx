@@ -19,7 +19,7 @@ function Projects() {
         </div>
         <Bd2 variant="neutral" size="md">120+ abgeschlossene Aufgaben</Bd2>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0,1fr))', gap: 16 }} className="proj-grid">
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', gap: 16 }} className="proj-grid">
         {visible.map((src, i) => (
           <div key={i} style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', aspectRatio: '4/3', background: 'var(--paper-100)', boxShadow: 'var(--shadow-card)' }}>
             <img src={src} alt={`Projekt ${NUMS[i]}`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />
