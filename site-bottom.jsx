@@ -3,13 +3,33 @@
 const { Button: B2, Badge: Bd2, Wordmark: WM2, ReviewCard: RC2, Accordion: AC2 } = window.DesignSystem_9c3c7d;
 const UI2 = window.Icon;
 
-/* ---------- Projects (grid) ---------- */
+/* ---------- Projects (grid + lightbox) ---------- */
 function Projects() {
   const BASE = './assets/gallery/';
   const NUMS = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100];
   const all = [...NUMS].reverse().map(n => `${BASE}gallery-${n}.jpg`);
   const [expanded, setExpanded] = React.useState(false);
+  const [lb, setLb] = React.useState(null); // lightbox index or null
   const visible = expanded ? all : all.slice(0, 6);
+
+  React.useEffect(() => {
+    if (lb === null) return;
+    const handler = (e) => {
+      if (e.key === 'Escape') setLb(null);
+      if (e.key === 'ArrowLeft') setLb(i => (i > 0 ? i - 1 : all.length - 1));
+      if (e.key === 'ArrowRight') setLb(i => (i < all.length - 1 ? i + 1 : 0));
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [lb]);
+
+  React.useEffect(() => {
+    document.body.style.overflow = lb !== null ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [lb]);
+
+  const btnBase = { position: 'absolute', top: '50%', transform: 'translateY(-50%)', width: 48, height: 48, borderRadius: '50%', border: 'none', background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(4px)', color: '#fff', fontSize: 24, cursor: 'pointer', display: 'grid', placeItems: 'center', lineHeight: 1 };
+
   return (
     <section id="projects" style={{ maxWidth: 1180, margin: '0 auto', padding: '80px 24px' }}>
       <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 24, marginBottom: 36, flexWrap: 'wrap' }}>
@@ -21,8 +41,8 @@ function Projects() {
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', gap: 16 }} className="proj-grid">
         {visible.map((src, i) => (
-          <div key={i} style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', aspectRatio: '4/3', background: 'var(--paper-100)', boxShadow: 'var(--shadow-card)' }}>
-            <img src={src} alt={`Projekt ${NUMS[i]}`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />
+          <div key={i} onClick={() => setLb(i)} style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', aspectRatio: '4/3', background: 'var(--paper-100)', boxShadow: 'var(--shadow-card)', cursor: 'pointer' }}>
+            <img src={src} alt={`Projekt ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />
           </div>
         ))}
       </div>
@@ -31,6 +51,21 @@ function Projects() {
           {expanded ? 'Weniger Fotos' : 'Mehr Fotos'}
         </B2>
       </div>
+
+      {lb !== null && (
+        <div onClick={() => setLb(null)} style={{ position: 'fixed', inset: 0, zIndex: 300, background: 'rgba(14,11,8,0.9)', backdropFilter: 'blur(6px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <button onClick={(e) => { e.stopPropagation(); setLb(null); }} style={{ position: 'absolute', top: 20, right: 20, width: 44, height: 44, borderRadius: '50%', border: 'none', background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(4px)', color: '#fff', fontSize: 20, cursor: 'pointer', display: 'grid', placeItems: 'center' }}>✕</button>
+          <button onClick={(e) => { e.stopPropagation(); setLb(i => (i > 0 ? i - 1 : all.length - 1)); }} style={{ ...btnBase, left: 20 }}>‹</button>
+          <img
+            src={all[lb]}
+            alt={`Projekt ${lb + 1}`}
+            onClick={(e) => e.stopPropagation()}
+            style={{ maxWidth: 'min(900px, 92vw)', maxHeight: '88vh', objectFit: 'contain', borderRadius: 8, boxShadow: '0 8px 48px rgba(0,0,0,0.6)', display: 'block' }}
+          />
+          <button onClick={(e) => { e.stopPropagation(); setLb(i => (i < all.length - 1 ? i + 1 : 0)); }} style={{ ...btnBase, right: 20 }}>›</button>
+          <div style={{ position: 'absolute', bottom: 20, left: '50%', transform: 'translateX(-50%)', color: 'rgba(255,255,255,0.55)', fontSize: 13 }}>{lb + 1} / {all.length}</div>
+        </div>
+      )}
     </section>
   );
 }
