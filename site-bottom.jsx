@@ -91,6 +91,11 @@ function Reviews() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }} className="rev-grid">
           {data.map(r => <RC2 key={r.name} {...r} rating={5} />)}
         </div>
+        <div style={{ textAlign: 'center', marginTop: 32 }}>
+          <a href="https://www.google.com/maps/place/Hausmeister-+und+Handwerksservice/@51.5111482,6.8627592,17z/data=!4m8!3m7!1s0x47b8eb4693c46823:0x87289737505445bc!8m2!3d51.5111482!4d6.8627592!9m1!1b1!16s%2Fg%2F11zk24bnk5?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+            <B2 variant="secondary" size="lg">Mehr Bewertungen auf Google</B2>
+          </a>
+        </div>
       </div>
     </section>
   );
