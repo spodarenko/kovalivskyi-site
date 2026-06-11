@@ -1,0 +1,90 @@
+/* ============================================================
+   COLORS — Ковалівський
+   A warm, neighborly handyman palette: cream paper, terracotta
+   (rust), warm charcoal panels, blush, and a WhatsApp green.
+   Base ramps first, semantic aliases second.
+   ============================================================ */
+
+:root {
+  /* ---- Paper / warm neutrals ---- */
+  --paper-0:   #FCFAF4;  /* lightest — cards on cream */
+  --paper-50:  #F6F2EA;  /* page background */
+  --paper-100: #EFE9DD;  /* sunken / alt band */
+  --paper-200: #E6DECF;  /* strong hairline */
+  --line:      #E7E0D2;  /* default hairline border */
+
+  /* ---- Ink (warm charcoal → near black) ---- */
+  --ink-950: #0E0B08;  /* footer, deepest */
+  --ink-900: #1C140F;  /* dark panels (process, contact) */
+  --ink-800: #261D15;  /* raised card on dark */
+  --ink-700: #3A2D23;
+  --ink-600: #574B3F;
+  --ink-500: #6E665C;  /* muted body text */
+  --ink-400: #8E867A;  /* faint text / captions */
+
+  /* ---- Rust (primary / terracotta) ---- */
+  --rust-700: #8C3620;  /* pressed / hover */
+  --rust-600: #A6402A;  /* primary */
+  --rust-500: #BE5132;  /* hover-light, links */
+  --rust-300: #DC9B85;
+  --rust-100: #F0DFD5;  /* soft fill */
+  --rust-50:  #F7ECE4;  /* faint tint */
+
+  /* ---- Clay (warm accent, esp. on dark) ---- */
+  --clay-300: #E8AA8E;  /* numbers / accents on ink panels */
+  --clay-200: #F0C6B0;
+
+  /* ---- Blush (avatars, soft chips) ---- */
+  --blush:     #F4DED6;
+  --blush-ink: #A6402A;  /* initials inside blush */
+
+  /* ---- Stars / rating ---- */
+  --star: #CF4F2A;
+
+  /* ---- WhatsApp brand ---- */
+  --whatsapp:     #15683B;
+  --whatsapp-700: #0F5530;
+
+  /* ---- Status ---- */
+  --success: #2F7D4F;
+  --warning: #C98A1E;
+  --danger:  #B23B2A;
+
+  --white: #FFFFFF;
+
+  /* ============================================================
+     SEMANTIC ALIASES
+     ============================================================ */
+
+  /* Surfaces */
+  --bg:             var(--paper-50);
+  --bg-alt:         var(--paper-100);
+  --surface:        var(--paper-0);
+  --surface-sunken: var(--paper-100);
+  --surface-dark:   var(--ink-900);
+  --surface-dark-2: var(--ink-800);
+
+  /* Text */
+  --text:               var(--ink-900);
+  --text-strong:        var(--ink-950);
+  --text-muted:         var(--ink-500);
+  --text-faint:         var(--ink-400);
+  --text-on-dark:       #F3EEE5;
+  --text-on-dark-muted: #B7AEA1;
+
+  /* Lines */
+  --border:        var(--line);
+  --border-strong: var(--paper-200);
+  --border-dark:   rgba(243,238,229,0.12);
+
+  /* Primary */
+  --primary:       var(--rust-600);
+  --primary-hover: var(--rust-700);
+  --primary-soft:  var(--rust-50);
+  --on-primary:    #FCF4ED;
+  --accent:        var(--clay-300);
+
+  /* Interaction */
+  --focus-ring: rgba(166,64,42,0.38);
+  --link:       var(--rust-600);
+}

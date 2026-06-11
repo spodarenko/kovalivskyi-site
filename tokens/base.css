@@ -1,0 +1,58 @@
+/* ============================================================
+   BASE — Ковалівський
+   Minimal element defaults so any page linking styles.css
+   inherits the brand foundation. Kept light on purpose.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  font-weight: var(--weight-regular);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-strong);
+  margin: 0 0 0.4em;
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--text-4xl); }
+h2 { font-size: var(--text-3xl); }
+h3 { font-size: var(--text-xl); letter-spacing: var(--tracking-normal); }
+
+p { margin: 0 0 1em; text-wrap: pretty; }
+
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--rust-700); }
+
+strong, b { font-weight: var(--weight-bold); }
+
+::selection { background: var(--rust-100); color: var(--ink-950); }
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Eyebrow / location pill text used across the brand */
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  color: var(--primary);
+}

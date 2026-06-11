@@ -1,0 +1,43 @@
+/* ============================================================
+   SPACING, RADII & LAYOUT — Ковалівський
+   8px-based rhythm. Generous, soft radii to match the brand.
+   ============================================================ */
+
+:root {
+  /* ---- Spacing scale ---- */
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* ---- Radii ---- */
+  --radius-xs:   6px;
+  --radius-sm:   10px;
+  --radius-md:   14px;
+  --radius-lg:   20px;   /* cards */
+  --radius-xl:   28px;   /* large panels, image frames */
+  --radius-2xl:  36px;
+  --radius-pill: 999px;  /* buttons, nav, chips */
+
+  /* ---- Layout ---- */
+  --container:    1200px;
+  --container-wide:1320px;
+  --gutter:       24px;
+  --section-y:    96px;   /* vertical section padding (desktop) */
+
+  /* ---- Control sizing ---- */
+  --control-sm: 38px;
+  --control-md: 48px;
+  --control-lg: 58px;   /* hero CTAs, form submit */
+  --field-pad-x: 18px;
+}
