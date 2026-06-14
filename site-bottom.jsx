@@ -167,9 +167,11 @@ function Faq() {
     { q: 'Ist ein Vertrag erforderlich?', a: 'Für private Kleinaufträge ist kein Vertrag notwendig. Für regelmäßige Objektbetreuung erstellen wir auf Wunsch eine Vereinbarung.' },
   ];
   return (
-    <section id="faq" style={{ maxWidth: 880, margin: '0 auto', padding: '80px 24px' }}>
-      <h2 style={{ fontSize: 'var(--text-3xl)', margin: '0 0 32px' }}>Häufige Fragen</h2>
-      <AC2 items={items} defaultOpen={0} />
+    <section id="faq" style={{ background: 'var(--paper-100)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
+      <div style={{ maxWidth: 880, margin: '0 auto', padding: '80px 24px' }}>
+        <h2 style={{ fontSize: 'var(--text-3xl)', margin: '0 0 32px' }}>Häufige Fragen</h2>
+        <AC2 items={items} defaultOpen={0} />
+      </div>
     </section>
   );
 }
