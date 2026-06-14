@@ -118,7 +118,7 @@ function ServiceArea() {
             <p style={{ color: 'var(--text-muted)', margin: 0 }}>
               Wir arbeiten in Oberhausen und im gesamten Ruhrgebiet. Häufige Einsatzorte: Essen, Duisburg, Mülheim an der Ruhr, Düsseldorf, Bottrop, Gelsenkirchen, Bochum, Ratingen, Dinslaken, Moers und Köln.
             </p>
-            <a href="https://www.google.com/maps/place/Hausmeister-+und+Handwerksservice/@51.5111482,6.8627592,17z" target="_blank" rel="noopener noreferrer" style={{ marginTop: 'auto', paddingTop: 22 }}>
+            <a href="https://www.google.com/maps?q=Hausmeister-+und+Handwerksservice,+Vestische+Str.+184,+46145+Oberhausen&ftid=0x47b8eb4693c46823:0x87289737505445bc&entry=gps&lucs=,94284475,47071704,94218641&g_ep=CAISDTYuMTI0LjEuNzM0NDAYACCs3wEqGyw5NDI4NDQ3NSw0NzA3MTcwNCw5NDIxODY0MUICREU%3D&skid=c7539dc4-4460-4024-9a5d-6d695e5597a9&g_st=iwb" target="_blank" rel="noopener noreferrer" style={{ marginTop: 'auto', paddingTop: 22 }}>
               <B2 variant="secondary" size="lg" fullWidth>Karte öffnen</B2>
             </a>
           </div>
