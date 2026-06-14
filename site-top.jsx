@@ -187,7 +187,7 @@ function Process() {
     <section id="process" style={{ background: 'var(--surface-dark)', color: 'var(--text-on-dark)' }}>
       <div style={{ maxWidth: 1180, margin: '0 auto', padding: '88px 24px' }}>
         <h2 style={{ fontSize: 'var(--text-3xl)', color: 'var(--text-on-dark)', margin: '0 0 16px' }}>Arbeitsablauf</h2>
-        <p style={{ color: 'var(--text-on-dark-muted)', maxWidth: '60ch', fontSize: 'var(--text-lg)', margin: '0 0 44px' }}>
+        <p style={{ color: 'var(--text-on-dark-muted)', maxWidth: '95ch', fontSize: 'var(--text-lg)', margin: '0 0 44px' }}>
           Kontaktieren Sie uns auf Ihrem bevorzugten Weg und erhalten Sie eine Rückmeldung innerhalb von 24 Stunden. Von der ersten Anfrage bis zum Ergebnis — vier einfache Schritte.
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0,1fr))', gap: 20 }} className="proc-grid">
