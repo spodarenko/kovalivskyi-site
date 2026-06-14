@@ -114,7 +114,7 @@ function ServiceArea() {
         <div className="area-map-wrap" style={{ position: 'relative', border: '1px solid var(--border)', borderRadius: 18, overflow: 'hidden', isolation: 'isolate' }}>
           <div ref={mapRef} className="area-map" style={{ height: 520, width: '100%', display: 'block' }} />
           <div className="area-panel" style={{ position: 'absolute', top: 16, left: 16, bottom: 16, zIndex: 1000, background: 'var(--surface)', border: '1.5px solid var(--border-strong)', borderRadius: 'var(--radius-lg)', padding: 32, maxWidth: 440, boxShadow: 'var(--shadow-card)', display: 'flex', flexDirection: 'column' }}>
-            <h2 style={{ fontSize: 'var(--text-2xl)', margin: '0 0 18px', whiteSpace: 'nowrap' }}>Oberhausen und<br/>das Ruhrgebiet</h2>
+            <h2 style={{ fontSize: 'var(--text-2xl)', margin: '0 0 18px' }}>Oberhausen und das Ruhrgebiet</h2>
             <p style={{ color: 'var(--text-muted)', margin: 0 }}>
               Wir arbeiten in Oberhausen und im gesamten Ruhrgebiet. Häufige Einsatzorte: Essen, Duisburg, Mülheim an der Ruhr, Düsseldorf, Bottrop, Gelsenkirchen, Bochum, Ratingen, Dinslaken, Moers und Köln.
             </p>
