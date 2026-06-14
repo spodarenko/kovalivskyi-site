@@ -571,7 +571,7 @@ function StepCard({
       flexDirection: 'column',
       gap: 14,
       padding: '26px 24px 30px',
-      minHeight: 220,
+      minHeight: 'auto',
       background: 'transparent',
       border: '1px solid var(--border-dark)',
       borderRadius: 'var(--radius-lg)',
