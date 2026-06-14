@@ -520,7 +520,7 @@ Object.assign(__ds_scope, { ServiceCard });
 try { (() => {
 /**
  * StatBlock — a big Philosopher display figure over a label.
- * Used for the trust strip (24h · 35+ км · Гнучко · Чесно).
+ * Used for the trust strip (24h · 50+ км · Гнучко · Чесно).
  */
 function StatBlock({
   value,
@@ -2533,7 +2533,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 
   /* ---------- Trust strip ---------- */
   function TrustStrip() {
-    const stats = [['24h', 'Відповідь на запити'], ['35+ км', 'Обергаузен + округа'], ['Гнучко', 'Вихідні за домовленістю'], ['Чесно', 'Прозорі ціни']];
+    const stats = [['24h', 'Відповідь на запити'], ['50+ км', 'Обергаузен + округа'], ['Гнучко', 'Вихідні за домовленістю'], ['Чесно', 'Прозорі ціни']];
     return /*#__PURE__*/React.createElement("section", {
       style: {
         maxWidth: 1180,

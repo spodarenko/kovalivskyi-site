@@ -100,7 +100,7 @@ function Hero({ onQuote }) {
 
 /* ---------- Trust strip ---------- */
 function TrustStrip() {
-  const stats = [['24h','Schnelle Rückmeldung'],['35+ km','Oberhausen + Umgebung'],['Flexibel','Termine auch am Wochenende'],['Fair','Transparente Preise']];
+  const stats = [['24h','Schnelle Rückmeldung'],['50+ km','Oberhausen + Umgebung'],['Flexibel','Termine auch am Wochenende'],['Fair','Transparente Preise']];
   return (
     <section style={{ maxWidth: 1180, margin: '0 auto', padding: '36px 24px' }}>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0,1fr))', gap: 24 }} className="trust-grid">
