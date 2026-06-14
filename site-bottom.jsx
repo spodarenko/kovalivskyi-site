@@ -70,6 +70,62 @@ function Projects() {
   );
 }
 
+/* ---------- Service Area (map) ---------- */
+function ServiceArea() {
+  const MAP_CITIES = [
+    ['Oberhausen',    51.4963, 6.8637],
+    ['Essen',         51.4556, 7.0116],
+    ['Duisburg',      51.4344, 6.7623],
+    ['Mülheim',       51.4275, 6.8825],
+    ['Düsseldorf',    51.2217, 6.7762],
+    ['Bottrop',       51.5236, 6.9221],
+    ['Gelsenkirchen', 51.5177, 7.0857],
+    ['Bochum',        51.4818, 7.2162],
+    ['Ratingen',      51.2979, 6.8511],
+    ['Dinslaken',     51.5662, 6.7244],
+    ['Moers',         51.4521, 6.6268],
+    ['Köln',          50.9333, 6.9500],
+  ];
+  const mapRef = React.useRef(null);
+  React.useEffect(() => {
+    if (!mapRef.current || typeof L === 'undefined') return;
+    const map = L.map(mapRef.current, { zoomControl: false, scrollWheelZoom: false }).setView([51.45, 6.9], 9);
+    L.control.zoom({ position: 'topright' }).addTo(map);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      maxZoom: 19
+    }).addTo(map);
+    const pinIcon = L.divIcon({
+      className: '',
+      html: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="36" viewBox="0 0 28 36"><path d="M14 0C6.268 0 0 6.268 0 14c0 9.333 14 22 14 22S28 23.333 28 14C28 6.268 21.732 0 14 0z" fill="oklch(42% 0.128 34.6)"/><circle cx="14" cy="14" r="6" fill="oklch(100% 0 0 / .85)"/></svg>',
+      iconSize: [28, 36], iconAnchor: [14, 36], popupAnchor: [0, -36]
+    });
+    MAP_CITIES.forEach(([name, lat, lng]) => {
+      L.marker([lat, lng], { icon: pinIcon }).addTo(map).bindPopup(`<strong>${name}</strong>`);
+    });
+    setTimeout(() => { map.invalidateSize(); map.setView([51.45, 6.9], 9); }, 200);
+    return () => map.remove();
+  }, []);
+  return (
+    <section id="standorte" style={{ background: 'var(--paper-100)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
+      <div style={{ maxWidth: 1180, margin: '0 auto', padding: '80px 24px', display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: 40, alignItems: 'stretch' }} className="about-grid">
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 20 }}>
+          <h2 style={{ fontSize: 'var(--text-3xl)', margin: 0 }}>Oberhausen und<br/>das Ruhrgebiet</h2>
+          <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-muted)', margin: 0 }}>
+            Wir arbeiten in Oberhausen und im gesamten Ruhrgebiet. Häufige Einsatzorte: Essen, Duisburg, Mülheim an der Ruhr, Düsseldorf, Bottrop, Gelsenkirchen, Bochum, Ratingen, Dinslaken, Moers und Köln.
+          </p>
+          <div>
+            <a href="https://www.google.com/maps/place/Hausmeister-+und+Handwerksservice/@51.5111482,6.8627592,17z" target="_blank" rel="noopener noreferrer">
+              <B2 variant="secondary" size="lg">Karte öffnen</B2>
+            </a>
+          </div>
+        </div>
+        <div ref={mapRef} style={{ borderRadius: 'var(--radius-xl)', overflow: 'hidden', minHeight: 380 }} />
+      </div>
+    </section>
+  );
+}
+
 /* ---------- Reviews ---------- */
 function Reviews() {
   const data = [
@@ -163,5 +219,5 @@ function SiteFooter() {
   );
 }
 
-Object.assign(window, { Projects, Reviews, Faq, ContactBooking, SiteFooter });
+Object.assign(window, { Projects, Reviews, ServiceArea, Faq, ContactBooking, SiteFooter });
 })();
