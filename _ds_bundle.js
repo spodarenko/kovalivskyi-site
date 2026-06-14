@@ -502,7 +502,8 @@ function ServiceCard({
       fontFamily: 'var(--font-display)',
       fontWeight: 700,
       fontSize: 'var(--text-xl)',
-      color: 'var(--text-strong)'
+      color: 'var(--text-strong)',
+      overflowWrap: 'break-word'
     }
   }, title), /*#__PURE__*/React.createElement("p", {
     style: {
