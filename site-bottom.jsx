@@ -89,7 +89,7 @@ function ServiceArea() {
   const mapRef = React.useRef(null);
   React.useEffect(() => {
     if (!mapRef.current || typeof L === 'undefined') return;
-    const map = L.map(mapRef.current, { zoomControl: false, scrollWheelZoom: false }).setView([51.27, 6.75], 9);
+    const map = L.map(mapRef.current, { zoomControl: false, scrollWheelZoom: false, attributionControl: false }).setView([51.27, 6.75], 9);
     L.control.zoom({ position: 'topright' }).addTo(map);
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
