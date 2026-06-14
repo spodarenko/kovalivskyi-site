@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
 <link rel="stylesheet" href="./styles.css" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <style>
   body { margin: 0; background: var(--bg); }
   a { text-decoration: none; }
@@ -41,6 +41,8 @@
     .menu-btn { display: grid !important; }
   }
   @media (max-width: 980px) {
+    .area-map { height: 720px !important; }
+    .area-panel { top: auto !important; left: 40px !important; right: 40px !important; bottom: 36px !important; max-width: none !important; }
     .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr !important; }
     .trust-grid, .proc-grid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
     .serv-illus, .serv-grid, .rev-grid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
@@ -55,6 +57,8 @@
     .proc-grid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
   }
   @media (max-width: 560px) {
+    .area-map { height: 780px !important; }
+    .area-panel { left: 24px !important; right: 24px !important; bottom: 28px !important; padding: 30px 26px !important; }
     .serv-illus, .serv-grid, .rev-grid, .trust-grid, .proc-grid { grid-template-columns: minmax(0,1fr) !important; }
     .hero-grid > div:first-child { padding-top: 8px !important; }
     .hero-cta { flex-direction: column; align-items: stretch; }
@@ -85,7 +89,7 @@
   </svg>
 </template>
 <div id="root"></div>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WLs=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>

@@ -107,20 +107,20 @@ function ServiceArea() {
     return () => map.remove();
   }, []);
   return (
-    <section id="standorte" style={{ background: 'var(--paper-100)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
-      <div style={{ maxWidth: 1180, margin: '0 auto', padding: '80px 24px', display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: 40, alignItems: 'stretch' }} className="about-grid">
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 20 }}>
-          <h2 style={{ fontSize: 'var(--text-3xl)', margin: 0 }}>Oberhausen und<br/>das Ruhrgebiet</h2>
-          <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-muted)', margin: 0 }}>
-            Wir arbeiten in Oberhausen und im gesamten Ruhrgebiet. Häufige Einsatzorte: Essen, Duisburg, Mülheim an der Ruhr, Düsseldorf, Bottrop, Gelsenkirchen, Bochum, Ratingen, Dinslaken, Moers und Köln.
-          </p>
-          <div>
-            <a href="https://www.google.com/maps/place/Hausmeister-+und+Handwerksservice/@51.5111482,6.8627592,17z" target="_blank" rel="noopener noreferrer">
-              <B2 variant="secondary" size="lg">Karte öffnen</B2>
+    <section id="standorte" style={{ background: 'var(--bg)' }}>
+      <div style={{ maxWidth: 1180, margin: '0 auto', padding: '80px 24px' }}>
+        <div className="area-map-wrap" style={{ position: 'relative', border: '1px solid var(--border)', borderRadius: 18, overflow: 'hidden', isolation: 'isolate' }}>
+          <div ref={mapRef} className="area-map" style={{ height: 520, width: '100%', display: 'block' }} />
+          <div className="area-panel" style={{ position: 'absolute', top: 16, left: 16, bottom: 16, zIndex: 1000, background: 'rgba(255,255,255,0.94)', backdropFilter: 'blur(8px)', borderRadius: 14, padding: '38px 32px', maxWidth: 350, boxShadow: '0 4px 28px rgba(0,0,0,0.10)', display: 'flex', flexDirection: 'column' }}>
+            <h2 style={{ fontSize: 'var(--text-3xl)', margin: '0 0 18px' }}>Oberhausen und<br/>das Ruhrgebiet</h2>
+            <p style={{ color: 'var(--text-muted)', margin: 0 }}>
+              Wir arbeiten in Oberhausen und im gesamten Ruhrgebiet. Häufige Einsatzorte: Essen, Duisburg, Mülheim an der Ruhr, Düsseldorf, Bottrop, Gelsenkirchen, Bochum, Ratingen, Dinslaken, Moers und Köln.
+            </p>
+            <a href="https://www.google.com/maps/place/Hausmeister-+und+Handwerksservice/@51.5111482,6.8627592,17z" target="_blank" rel="noopener noreferrer" style={{ marginTop: 'auto', paddingTop: 22 }}>
+              <B2 variant="secondary" size="lg" fullWidth>Karte öffnen</B2>
             </a>
           </div>
         </div>
-        <div ref={mapRef} style={{ borderRadius: 'var(--radius-xl)', overflow: 'hidden', minHeight: 380 }} />
       </div>
     </section>
   );
