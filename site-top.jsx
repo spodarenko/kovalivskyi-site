@@ -7,7 +7,7 @@ const CITIES = ['Oberhausen','Duisburg','Essen','Mülheim','Düsseldorf','Bottro
 
 /* ---------- Header ---------- */
 function SiteHeader({ onQuote }) {
-  const links = [['Leistungen','#services'],['Ablauf','#process'],['Projekte','#projects'],['Standorte','#standorte'],['Kontakt','#contact']];
+  const links = [['Leistungen','#services'],['Ablauf','#process'],['Projekte','#projects'],['Servicegebiet','#standorte'],['Kontakt','#contact']];
   const [open, setOpen] = React.useState(false);
   React.useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';

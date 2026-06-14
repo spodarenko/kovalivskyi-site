@@ -109,7 +109,7 @@ function ServiceArea() {
   return (
     <section id="standorte" style={{ background: 'var(--bg)' }}>
       <div style={{ maxWidth: 1180, margin: '0 auto', padding: '80px 24px' }}>
-        <div className="eyebrow" style={{ marginBottom: 14 }}>Standorte</div>
+        <div className="eyebrow" style={{ marginBottom: 14 }}>Servicegebiet</div>
         <h2 style={{ fontSize: 'var(--text-3xl)', maxWidth: '20ch', margin: '0 0 36px' }}>Wo wir für Sie arbeiten</h2>
         <div className="area-map-wrap" style={{ position: 'relative', border: '1px solid var(--border)', borderRadius: 18, overflow: 'hidden', isolation: 'isolate' }}>
           <div ref={mapRef} className="area-map" style={{ height: 520, width: '100%', display: 'block' }} />
