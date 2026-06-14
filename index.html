@@ -12,6 +12,8 @@
 <style>
   body { margin: 0; background: var(--bg); }
   a { text-decoration: none; }
+  /* Warm map tint — matches site clay/beige palette. Only tiles, not markers. */
+  .area-map .leaflet-tile-pane { filter: sepia(0.42) saturate(1.12) hue-rotate(-8deg) brightness(1.02) contrast(0.97); }
   .proj-item { transition: transform .2s ease, box-shadow .2s ease; }
   .proj-item:hover { transform: scale(1.03); box-shadow: 0 8px 28px rgba(0,0,0,0.18); }
   .proj-item:hover .proj-item-img { filter: brightness(0.82); transition: filter .2s ease; }
