@@ -72,55 +72,23 @@ function Projects() {
 
 /* ---------- Service Area (map) ---------- */
 function ServiceArea() {
-  const MAP_CITIES = [
-    ['Oberhausen',    51.4963, 6.8637],
-    ['Essen',         51.4556, 7.0116],
-    ['Duisburg',      51.4344, 6.7623],
-    ['Mülheim',       51.4275, 6.8825],
-    ['Düsseldorf',    51.2217, 6.7762],
-    ['Bottrop',       51.5236, 6.9221],
-    ['Gelsenkirchen', 51.5177, 7.0857],
-    ['Bochum',        51.4818, 7.2162],
-    ['Ratingen',      51.2979, 6.8511],
-    ['Dinslaken',     51.5662, 6.7244],
-    ['Moers',         51.4521, 6.6268],
-    ['Köln',          50.9333, 6.9500],
-  ];
-  const mapRef = React.useRef(null);
-  React.useEffect(() => {
-    if (!mapRef.current || typeof L === 'undefined') return;
-    const map = L.map(mapRef.current, { zoomControl: false, scrollWheelZoom: false, attributionControl: false }).setView([51.27, 6.75], 9);
-    L.control.zoom({ position: 'topright' }).addTo(map);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-      maxZoom: 19
-    }).addTo(map);
-    const pinIcon = L.divIcon({
-      className: '',
-      html: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="36" viewBox="0 0 28 36"><path d="M14 0C6.268 0 0 6.268 0 14c0 9.333 14 22 14 22S28 23.333 28 14C28 6.268 21.732 0 14 0z" fill="oklch(42% 0.128 34.6)"/><circle cx="14" cy="14" r="6" fill="oklch(100% 0 0 / .85)"/></svg>',
-      iconSize: [28, 36], iconAnchor: [14, 36], popupAnchor: [0, -36]
-    });
-    MAP_CITIES.forEach(([name, lat, lng]) => {
-      L.marker([lat, lng], { icon: pinIcon }).addTo(map).bindPopup(`<strong>${name}</strong>`);
-    });
-    setTimeout(() => { map.invalidateSize(); map.setView([51.27, 6.75], 9); }, 200);
-    return () => map.remove();
-  }, []);
   return (
     <section id="standorte" style={{ background: 'var(--bg)' }}>
       <div style={{ maxWidth: 1180, margin: '0 auto', padding: '80px 24px' }}>
         <div className="eyebrow" style={{ marginBottom: 14 }}>Servicegebiet</div>
         <h2 style={{ fontSize: 'var(--text-3xl)', maxWidth: '20ch', margin: '0 0 36px' }}>Wo wir für Sie arbeiten</h2>
-        <div className="area-map-wrap" style={{ position: 'relative', border: '1px solid var(--border)', borderRadius: 18, overflow: 'hidden', isolation: 'isolate' }}>
-          <div ref={mapRef} className="area-map" style={{ height: 520, width: '100%', display: 'block' }} />
-          <div className="area-panel" style={{ position: 'absolute', top: 16, left: 16, bottom: 16, zIndex: 1000, background: 'var(--surface)', border: '1.5px solid var(--border-strong)', borderRadius: 'var(--radius-lg)', padding: 32, maxWidth: 440, boxShadow: 'var(--shadow-card)', display: 'flex', flexDirection: 'column' }}>
-            <h2 style={{ fontSize: 'var(--text-2xl)', margin: '0 0 18px' }}>Oberhausen und das Ruhrgebiet</h2>
+        <div className="area-grid" style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: 24, alignItems: 'stretch' }}>
+          <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)', padding: 32, boxShadow: 'var(--shadow-card)', display: 'flex', flexDirection: 'column' }}>
+            <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'var(--text-2xl)', color: 'var(--text-strong)', margin: '0 0 18px' }}>Oberhausen und das Ruhrgebiet</h3>
             <p style={{ color: 'var(--text-muted)', margin: 0 }}>
               Wir arbeiten in Oberhausen und im gesamten Ruhrgebiet. Häufige Einsatzorte: Essen, Duisburg, Mülheim an der Ruhr, Düsseldorf, Bottrop, Gelsenkirchen, Bochum, Ratingen, Dinslaken, Moers und Köln.
             </p>
             <a href="https://www.google.com/maps?q=Hausmeister-+und+Handwerksservice,+Vestische+Str.+184,+46145+Oberhausen&ftid=0x47b8eb4693c46823:0x87289737505445bc&entry=gps&lucs=,94284475,47071704,94218641&g_ep=CAISDTYuMTI0LjEuNzM0NDAYACCs3wEqGyw5NDI4NDQ3NSw0NzA3MTcwNCw5NDIxODY0MUICREU%3D&skid=c7539dc4-4460-4024-9a5d-6d695e5597a9&g_st=iwb" target="_blank" rel="noopener noreferrer" style={{ marginTop: 'auto', paddingTop: 22 }}>
               <B2 variant="secondary" size="lg" fullWidth>Karte öffnen</B2>
             </a>
+          </div>
+          <div className="area-map-img" style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--border)', boxShadow: 'var(--shadow-card)', minHeight: 380, background: 'var(--paper-100)' }}>
+            <img src="./assets/photos/service-area-map.png" alt="Servicegebiet im Ruhrgebiet" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />
           </div>
         </div>
       </div>
