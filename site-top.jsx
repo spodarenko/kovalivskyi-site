@@ -20,7 +20,7 @@ function SiteHeader({ onQuote }) {
         border: '1px solid var(--border)', borderRadius: 'var(--radius-pill)', boxShadow: 'var(--shadow-float)',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 14px 12px 22px',
         position: 'relative', zIndex: 51 }}>
-        <Wordmark variant="full" tone="ink" size="md" name="Kovalivskyi" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{ cursor: 'pointer' }} />
+        <img src="./assets/kovalivskyi-logo.svg" alt="Kovalivskyi" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{ height: 28, width: 'auto', display: 'block', cursor: 'pointer' }} />
         <nav style={{ display: 'flex', gap: 30 }} className="nav-links">
           {links.map(([l,h]) => <a key={l} href={h} onClick={(e)=>{e.preventDefault();go(h);}} style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 'var(--text-base)', color: 'var(--ink-700)' }}>{l}</a>)}
         </nav>
