@@ -179,7 +179,7 @@ function SiteFooter() {
     <footer style={{ background: 'var(--ink-950)', color: 'var(--text-on-dark)' }}>
       <div style={{ maxWidth: 1180, margin: '0 auto', padding: '40px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24, flexWrap: 'wrap' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-          <WM2 variant="full" tone="cream" size="sm" name="Kovalivskyi" />
+          <img src="./assets/kovalivskyi-logo.svg" alt="Kovalivskyi" style={{ height: 26, width: 'auto', display: 'block', filter: 'brightness(0) invert(1)' }} />
         </div>
         <div style={{ color: 'var(--text-on-dark-muted)', fontSize: 'var(--text-sm)' }}>© 2026 Handwerks- &amp; Hausmeisterservice Kovalivskyi</div>
         <div style={{ display: 'flex', gap: 22 }}>
